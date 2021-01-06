@@ -1,6 +1,5 @@
 
 
-
 public class NumberUtilities {
 
     public static String getRange(int stop) {
