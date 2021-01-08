@@ -3,46 +3,58 @@
 public class NumberUtilities {
 
     public static String getRange(int stop) {
-        return getRange(0, stop);
+        String numList = "";
+        for (int i=0; i<stop; i++) {
+        	numList = numList + Integer.toString(i);
+        }
+    	return numList;
     }
 
     public static String getRange(int start, int stop) {
-        return getRange(start, stop, 1);
+        String numList = "";
+        for (int i=start; i<stop; i++) {
+        	numList = numList + Integer.toString(i);
+        }
+    	return numList;
     }
 
 
     public static String getRange(int start, int stop, int step) {
-        String expected = "";
-        for (int i=start; i<stop; i+=step) {
-        	expected += 1;
+        String numList = "";
+        for (int i=start; i<stop; i++) {
+        	if (i % step ==0)
+        	numList += numList + Integer.toString(i);
         }
         
-        return expected;
+        return numList;
     }
 
     public static String getEvenNumbers(int start, int stop) {
-        if (start%2==0) {
-        	return getRange(start, stop, 2);
-        }else {
-        	return getRange(start+1, stop, 2);
-        }
+    	String numList = "";
+    	for (int i=start; i<stop; i++) {
+    		if (i % 2 ==0)
+    		numList = numList + Integer.toString(i);
+    	}
+    	return numList;
     }
 
 
     public static String getOddNumbers(int start, int stop) {
-    	if (start%2==0) {
-        	return getRange(start+1, stop, 2);
-        }else {
-        	return getRange(start, stop, 2);
-        }
+    	String numList = "";
+    	for (int i=start; i<stop; i++) {
+    		if (i % 2 !=0)
+    		numList = numList + Integer.toString(i);
+    	}
+    	return numList;
     }
 
 
     public static String getExponentiations(int start, int stop, int exponent) {
-        String expected = "";
-        for (int i=start; i<=stop; i++) {
-        	expected += String.format("%1$.0f", Math.pow(i,  exponent));
+        String numList = "";
+        for (int i=start; i<= stop; i++) {
+        	int square = (int) Math.pow(i,  exponent);
+        	numList = numList + square;
         }
-        return expected;
+        return numList;
     }
 }
